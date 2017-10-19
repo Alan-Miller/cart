@@ -38,8 +38,8 @@ function mapStateToProps(state) {
 }
 
 export default withRouter(connect(mapStateToProps)(App));
-// Redux connect is used in this component just to show the number of items in the cart.
-// However, this App component is not a route component, so when we use Redux connect, 
-// the view doesn't update correctly when we try to go to other routes.
-// We fix this by simply importing withRouter and using it here.
-// Alternatively, we could choose to not use connect in the App component.
+// I used Redux connect in this component just to show the number of items in the cart.
+// However, this App component is not a route component (i.e., not rendered with <Route />), 
+// so when we use connect, the view doesn't update correctly when we go to other routes.
+// We fix this by simply importing withRouter and invoking it here.
+// Alternatively, we could choose to not use connect in non-route components like App.
