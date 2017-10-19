@@ -4,7 +4,8 @@ import './App.css';
 import Shop from './Shop';
 import Details from './Details';
 import Cart from './Cart';
-import { Switch, Link, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Switch, Link, Route, withRouter } from 'react-router-dom';
 
 
 class App extends Component {
@@ -18,7 +19,7 @@ class App extends Component {
         </header>
         <div className="navStrip">
           <Link to="/shop"><div>SHOP</div></Link>
-          <Link to="/cart"><div>CART</div></Link>
+          <Link to="/cart"><div>CART: ({this.props.cart.length} items)</div></Link>
         </div>
 
         <Switch>
@@ -32,4 +33,13 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {cart: state.cart};
+}
+
+export default withRouter(connect(mapStateToProps)(App));
+// Redux connect is used in this component just to show the number of items in the cart.
+// However, this App component is not a route component, so when we use Redux connect, 
+// the view doesn't update correctly when we try to go to other routes.
+// We fix this by simply importing withRouter and using it here.
+// Alternatively, we could choose to not use connect in the App component.
