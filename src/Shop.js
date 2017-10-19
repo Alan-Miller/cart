@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import { connect } from 'react-redux';
@@ -27,7 +26,7 @@ class App extends Component {
               <div key={i} className="product">
               
                 <Link to={`/details/${product.id}`} >
-                  <img src={product.image} alt="product image" />
+                  <img src={product.image} alt={product.title} />
                   <p>{product.title}</p>
                   <p className="id">product ID: {product.id}</p>
                 </Link>

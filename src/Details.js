@@ -26,7 +26,7 @@ class Details extends Component {
 
     return (
       <div className="product"> 
-        <img alt="product image" src={product.image} />
+        <img alt={product.title} src={product.image} />
         <p>{product.title}</p>
         <p>"{product.desc}"</p>
         <p>${product.price}</p>

@@ -11,7 +11,7 @@ class Cart extends Component {
         {cart.map((item, i) => {
           return (
             <div className="itemInCart" key={i}> 
-              <img alt={`${item.title} image`} src={item.image} />
+              <img alt={item.title} src={item.image} />
               <p>{item.title}</p>
               <p>${item.price}</p>
             </div>
