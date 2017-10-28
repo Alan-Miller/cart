@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 
 class Cart extends Component {
 
+  removeFromCart(i) {
+    return;
+  }
+
   render() {
     const cart = this.props.cart;
 
