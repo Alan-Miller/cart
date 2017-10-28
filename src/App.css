@@ -95,3 +95,11 @@ a {
   margin-left: 30px;
   margin-right: 30px;
 }
+.itemInCart p.x {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.itemInCart p.x:hover {
+  cursor: pointer;
+  color: indianred;
+}

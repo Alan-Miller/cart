@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { removeProductFromCart } from './redux/reducer';
 
 class Cart extends Component {
-
-  removeFromCart(i) {
-    return;
-  }
 
   render() {
     const cart = this.props.cart;
@@ -18,6 +15,7 @@ class Cart extends Component {
               <img alt={item.title} src={item.image} />
               <p>{item.title}</p>
               <p>${item.price}</p>
+              <p className="x" onClick={_ => this.props.removeProductFromCart(i)}>x</p>
             </div>
           )
         })}
@@ -31,4 +29,4 @@ function mapStateToProps(state) {
   return {cart: state.cart};
 }
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, {removeProductFromCart})(Cart);
