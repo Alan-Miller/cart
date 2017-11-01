@@ -8,4 +8,6 @@ If you click Add To Cart, that product is sent to Redux and pushed onto the Redu
 
 The App header subscribes to the cart on Redux so it can display the number of items in the cart (i.e., the cart array’s length). This is an example of accessing Redux data in different components, since the cart data is used both in the Cart component to display the items in the cart and in the App component to display the number of items. 
 
+Clicking the "x" on an item in the cart will delete the item from the Redux cart.
+
 NOTE: withRouter is imported into the App component and called at the bottom. This merely fixes an issue where non-route components (like App in this case) using Redux connect do not properly rerender when trying to click to other routes. The alternative is to not use Redux connect in non-route components.
